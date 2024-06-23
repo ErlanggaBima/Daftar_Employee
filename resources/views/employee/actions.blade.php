@@ -9,10 +9,12 @@
         <form action="{{ route('employees.destroy', ['employee' => $employee->id]) }}" method="POST">
             @csrf
             @method('delete')
-            <button type="submit" class="btn btn-outline-dark btn-sm me-2"><i class="bi-trash"></i></button>
+            <button type="submit" class="btn btn-outline-dark btn-sm me-2 deleteBtn" data-id="{{ $employee->id }}"><i class="bi-trash"></i></button>
         </form>
     </div>
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
     $(document).ready(function() {
         $(".deleteBtn").click(function(){
