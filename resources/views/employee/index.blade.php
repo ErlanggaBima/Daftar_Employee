@@ -135,7 +135,7 @@
                         if(result.isConfirmed){
                            $.ajax({
                             type: "POST",
-                            url: "{{ route('data.destroy') }}",
+                            url: "{{ route('employees.destroy') }}",
                             data: {
                                 _token: "{{ csrf_token() }}",
                                 id : id
