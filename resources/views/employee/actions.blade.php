@@ -9,7 +9,7 @@
         {{-- <form action="{{ route('employees.destroy', ['employee' => $employee->id]) }}" method="POST">
             @csrf
             @method('delete') --}}
-            <button type="submit" class="btn btn-outline-dark btn-sm me-2 deleteBtn" data-id="{{ $employee->id }}"><i class="bi-trash"></i></button>
+            <button type="submit" class="btn btn-outline-dark btn-sm me-2 deleteBtn" data-id="{{ $employee->id }}"></button>
         {{-- </form> --}}
     </div>
 </div>
