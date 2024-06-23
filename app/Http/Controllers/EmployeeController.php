@@ -247,7 +247,7 @@ class EmployeeController extends Controller
         //ELOQUENT
         $employee->delete();
 
-        return redirect()->route('employees.index');
+        return redirect()->route('employees.index')->with('delete', 'Data berhasil dihapus');
     }
 
     public function downloadFile($employeeId)
