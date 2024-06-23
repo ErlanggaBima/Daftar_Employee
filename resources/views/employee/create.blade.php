@@ -100,5 +100,6 @@
     @endsection
 
     @vite('resources/js/app.js')
+    @vite('resources/js/emplyeeForm.js')
 </body>
 </html>

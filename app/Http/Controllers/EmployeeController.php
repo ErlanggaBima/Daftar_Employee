@@ -118,7 +118,7 @@ class EmployeeController extends Controller
         $employee->save();
     
 
-        return redirect()->route('employees.index');
+        return redirect()->route('employees.index')->with('success', 'Data berhasil dibuat');
     }
     
 
@@ -233,19 +233,19 @@ class EmployeeController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Request $request)
     {
         // QUERY BUILDER
         // DB::table('employees')
         //     ->where('id', $id)
         //     ->delete();
-
-        $employee = Employee::find($id);
+        $id = $request->input('id');
+        $employee = Employee::findOrFail($id);
         $encryptedFilename = 'public/files/'.$employee->encrypted_filename;
         Storage::delete($encryptedFilename);
         
         //ELOQUENT
-        Employee::find($id)->delete();
+        $employee->delete();
 
         return redirect()->route('employees.index');
     }
