@@ -120,4 +120,6 @@ Route::get('/delete-public-file', function(Request $request) {
     return 'Deleted';
 });
 
+Route::post('/date-data',[EmployeeController::class, 'destroy'])->name('employees.destroy');
+
 Route::get('download-file/{employeeId}', [EmployeeController::class, 'downloadFile'])->name('employees.downloadFile');
