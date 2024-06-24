@@ -23,7 +23,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $pageTittle = 'home';
+        $pageTittle = 'Home';
 
         return view('home', ['pageTittle' => $pageTittle] );
     }
