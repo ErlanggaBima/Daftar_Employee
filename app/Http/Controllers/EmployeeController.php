@@ -93,7 +93,7 @@ class EmployeeController extends Controller
     }
 
      // Get File
-     $image = $request->file('foto');
+     $image = $request->file('Foto');
 
      if ($image != null) {
          $originalimagename = $image->getClientOriginalName();
@@ -102,7 +102,6 @@ class EmployeeController extends Controller
          // Store File
          $image->move(public_path('files'),$encryptedimagename);
      }
-
 
         // INSERT QUERY
         // DB::table('employees')->insert([
