@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -24,7 +25,12 @@ class HomeController extends Controller
     public function index()
     {
         $pageTittle = 'home';
+        $employeeCounts = DB::table('employees')
+    ->join('positions', 'employees.position_id', '=', 'positions.id')
+    ->select('positions.name as position_name', DB::raw('count(employees.id) as employee_count'))
+    ->groupBy('positions.name')
+    ->get();
 
-        return view('home', ['pageTittle' => $pageTittle] );
+        return view('home', ['pageTittle' => $pageTittle], compact('employeeCounts'));
     }
 }

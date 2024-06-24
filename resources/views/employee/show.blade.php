@@ -45,6 +45,16 @@
                 <hr>
                 <div class="row">
                     <div class="col-md-12 mb-3">
+                        <div class="d-flex justify-content-center">
+                        <img src="{{asset('files/'.$employee->Foto)}}" class="img-fluid" style="width:150px" alt="..."></img>
+                        </div>
+                        {{-- @if ($employee->original_filename)
+                            <h5>{{ $employee->original_Foto }}</h5>
+                        @else --}}
+                            {{-- <h5>Tidak ada</h5>
+                        @endif --}}
+                    </div>
+                    <div class="col-md-12 mb-3">
                         <label for="firstName" class="form-label">First Name</label>
                         <h5>{{ $employee->firstname }}</h5>
                     </div>

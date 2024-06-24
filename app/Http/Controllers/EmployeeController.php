@@ -92,6 +92,17 @@ class EmployeeController extends Controller
         $file->store('public/files');
     }
 
+     // Get File
+     $image = $request->file('foto');
+
+     if ($image != null) {
+         $originalimagename = $image->getClientOriginalName();
+         $encryptedimagename = $image->hashName();
+ 
+         // Store File
+         $image->move(public_path('files'),$encryptedimagename);
+     }
+
 
         // INSERT QUERY
         // DB::table('employees')->insert([
@@ -109,6 +120,7 @@ class EmployeeController extends Controller
         $employee->email = $request->email;
         $employee->age = $request->age;
         $employee->position_id = $request->position;
+        $employee->Foto = $encryptedimagename;
 
         if ($file != null) {
             $employee->original_filename = $originalFilename;

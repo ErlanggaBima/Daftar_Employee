@@ -48,6 +48,10 @@
                     </div>
                     <hr>
                     <div class="row">
+                        <div class="col-md-12 mb-3">
+                            <label for="cv" class="form-label">Foto</label>
+                            <input type="file" accept="image/*" class="form-control" name="Foto" id="foto">
+                        </div>
                         <div class="col-md-6 mb-3">
                             <label for="firstName" class="form-label">First Name</label>
                             <input class="form-control @error('firstName') is-invalid @enderror" type="text" name="firstName" id="firstName" value="{{ old('firstName') }}" placeholder="Enter First Name">
